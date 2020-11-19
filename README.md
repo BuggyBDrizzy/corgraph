@@ -45,26 +45,22 @@ cortest(datasource = Date, var2 = "Total_N", cormethod = "pearson", verbose = TR
     #>       cor 
     #> 0.2667399
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+#### Development explanation
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+1.  First we used `library(devtools)` to be able to help construct files
+2.  `create_package()` initializes the creation
+3.  `use_r()` creates the necessary .R files
+4.  Ensure `roxygen2` comment skeleton is used to format properly
+5.  `uses_mit_license()` adds the necessary license so that people are
+    able to download and use the package
+6.  document() command is a handy function for documenting your files
+    without having to do it manually
+7.  `load_all()` roughly simulates what happens when a package is
+    installed and loaded with `library`
+8.  `use_test()` will create our test file where we use any necessary
+    `test_that()` functions
+9.  `check()` checks for warnings and errors
+10. `use_readme_rmd()` creates an .Rmd to show basic functionality. Rmd
+    files allow you to insert code chunks from R
+11. `use_vignette()` creates a file that you can use to show
+    functionality of your functions and package as a whole
