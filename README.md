@@ -13,7 +13,7 @@ The goal of corgraph is to add a visual component that complements the
 ## Installation
 
 You can install the released version of corgraph from
-[CRAN](https://CRAN.R-project.org) with:
+[github](https://github.com/BuggyBDrizzy/corgraph) with:
 
 ``` r
 devtools::install_github("https://github.com/BuggyBDrizzy/corgraph")
