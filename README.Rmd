@@ -37,8 +37,16 @@ library(corgraph)
 cortest(datasource = Date, var2 = "Total_N", cormethod = "pearson", verbose = TRUE)
 ```
 
+You can alter the parameters to use an entirely different dataset:
 
-#### Development explanation
+
+```{r}
+cortest(datasource = dplyr::starwars, var1 = "height", var2 = "mass", cormethod = "pearson", verbose = TRUE)
+```
+
+
+
+#### Development explanation. 1.1
 
 1. First we used `library(devtools)` to be able to help construct files 
 2. `create_package()` initializes the creation

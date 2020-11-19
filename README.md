@@ -45,7 +45,33 @@ cortest(datasource = Date, var2 = "Total_N", cormethod = "pearson", verbose = TR
     #>       cor 
     #> 0.2667399
 
-#### Development explanation
+You can alter the parameters to use an entirely different dataset:
+
+``` r
+cortest(datasource = dplyr::starwars, var1 = "height", var2 = "mass", cormethod = "pearson", verbose = TRUE)
+#> [1] "Building scatterplot..."
+#> `geom_smooth()` using formula 'y ~ x'
+#> Warning: Removed 28 rows containing non-finite values (stat_smooth).
+#> Warning: Removed 28 rows containing non-finite values (stat_cor).
+#> Warning: Removed 28 rows containing missing values (geom_point).
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+    #> [1] "Processing association between paired samples..."
+    #> 
+    #>  Pearson's product-moment correlation
+    #> 
+    #> data:  dplyr::pull(datasource, var1) and dplyr::pull(datasource, var2)
+    #> t = 1.02, df = 57, p-value = 0.312
+    #> alternative hypothesis: true correlation is not equal to 0
+    #> 95 percent confidence interval:
+    #>  -0.1265364  0.3770395
+    #> sample estimates:
+    #>       cor 
+    #> 0.1338842
+
+#### Development explanation. 1.1
 
 1.  First we used `library(devtools)` to be able to help construct files
 2.  `create_package()` initializes the creation
