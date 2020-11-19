@@ -1,0 +1,66 @@
+---
+title: "cortest"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cortest}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(corgraph)
+```
+
+#### This is a short look at the included dataset, `Date`:
+
+```{r}
+
+head(Date, n = c(5,11))
+
+```
+
+
+
+#### This is how to use the `cortest()` function using the default `Date` object:
+
+```{r}
+
+cortest(datasource = Date, var2 = "Total_N", cormethod = "pearson", verbose = TRUE)
+
+```
+
+#### You will want to pass your own tibble or dataframe object to the function, while specifying the two variables you would like to correlate. Here is an example using the `starwars` dataset. 
+
+```{r}
+
+cortest(datasource = dplyr::starwars, var1 = "height", var2 = "mass", cormethod = "pearson", verbose = TRUE)
+
+```
+
+
+#### Removing the confidence interval:
+
+```{r}
+
+cortest(datasource = dplyr::starwars, var1 = "height", var2 = "mass", cormethod = "pearson", verbose = TRUE, interval = FALSE)
+
+```
+
+
+#### For non-parametic data, use kendall or spearman as your `method`:
+
+```{r}
+
+cortest(datasource = dplyr::starwars, var1 = "height", var2 = "mass", cormethod = "kendall", verbose = TRUE, interval = FALSE)
+
+```
+
+
+

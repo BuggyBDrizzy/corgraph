@@ -1,16 +1,27 @@
 Package: corgraph
-Title: What the Package Does (One Line, Title Case)
+Title: Test for association between paired samples, and add a ggscatter plot 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Bryan",
+           family = "Driscoll",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "driscoll6@gmail.com")
+Description: Test for association between paired samples, using one of Pearson's product moment correlation coefficient, Kendall's Tau, or Spearman's Rho. Add a ggscatter plot to visually assess your correlation. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    ggpubr,
+    dplyr,
+    tibble,
+    rlang,
+    stats
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
