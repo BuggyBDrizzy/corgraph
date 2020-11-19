@@ -16,7 +16,7 @@ You can install the released version of corgraph from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("corgraph")
+devtools::install_github("https://github.com/BuggyBDrizzy/corgraph")
 ```
 
 ## Example
